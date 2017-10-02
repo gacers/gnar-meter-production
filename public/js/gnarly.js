@@ -98,7 +98,7 @@
 *
 *       beachID:
 *           id:
-*               http://surfline.com: find a cam in the Cams & Reports menu and
+*               https://surfline.com: find a cam in the Cams & Reports menu and
 *               select it (cameras have a square icon and
 *               HD cams have a rectangle icon).  The ID will be in the URL.
 *               Needs to be an array even if one.
@@ -1199,7 +1199,7 @@ var gnarly = (function() {
     */
     function weatherInfo() {
         $.ajax({
-            url: 'http://api.openweathermap.org/data/2.5/weather?lat=' + beachLatCoord + '&lon=' + beachLonCoord + '&units=' + openWeatherUnit + '&APPID=ef9e7e6d82e6945b2f61368cb1d538c7',
+            url: 'https://api.openweathermap.org/data/2.5/weather?lat=' + beachLatCoord + '&lon=' + beachLonCoord + '&units=' + openWeatherUnit + '&APPID=ef9e7e6d82e6945b2f61368cb1d538c7',
             type: 'GET',
             dataType: 'jsonp',
             success: function(responseData) {
@@ -1498,7 +1498,7 @@ var gnarly = (function() {
     function beachCam() {
         // Get surf cam
         $.ajax({
-            url: 'http://api.surfline.com/v1/cams/' + selectedBeachID,
+            url: 'https://api.surfline.com/v1/cams/' + selectedBeachID,
             type: 'GET',
             dataType: 'jsonp',
             success: function(responseData) {
@@ -1609,7 +1609,7 @@ var gnarly = (function() {
      */
     function sunInfo() {
         $.ajax({
-            url: 'http://api.sunrise-sunset.org/json?lat=' + beachLatCoord + '&lng=' + beachLonCoord + '&date=today&formatted=0',
+            url: 'https://api.sunrise-sunset.org/json?lat=' + beachLatCoord + '&lng=' + beachLonCoord + '&date=today&formatted=0',
             type: 'GET',
             dataType: 'jsonp',
             success: function(responseData) {
@@ -1626,7 +1626,7 @@ var gnarly = (function() {
     */
     function beachForecast() {
         $.ajax({
-            url: 'http://api.surfline.com/v1/forecasts/' + selectedBeachID + '?resources=surf,analysis,wind,weather,tide,sort&days=1&getAllSpots=false&units=' + surflineVar + '&interpolate=true&showOptimal=false&usenearshore=true',
+            url: 'https://api.surfline.com/v1/forecasts/' + selectedBeachID + '?resources=surf,analysis,wind,weather,tide,sort&days=1&getAllSpots=false&units=' + surflineVar + '&interpolate=true&showOptimal=false&usenearshore=true',
             type: 'GET',
             dataType: 'jsonp',
             success: function(responseData) {
