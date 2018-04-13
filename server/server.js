@@ -9,20 +9,24 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 var calendarCache = {};
 
+app.use(cors());
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 server.listen(3000);
 
 var currentSecondScreenURL = null;
 
 var staticPath = path.resolve(__dirname + '/../html/')
 
-app.use(cors());
 app.use(express.static(staticPath));
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 app.all('/videos/:video', function (req, res){
 	var requestedVideoPath = videoPath + "/" + req.params.video;
