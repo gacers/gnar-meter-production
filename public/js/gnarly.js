@@ -1498,7 +1498,7 @@ var gnarly = (function() {
     function beachCam() {
         // Get surf cam
         $.ajax({
-            url: 'https://api.surfline.com/v1/cams/' + selectedBeachID,
+            url: 'http://api.surfline.com/v1/cams/' + selectedBeachID,
             type: 'GET',
             dataType: 'jsonp',
             success: function(responseData) {
@@ -1584,7 +1584,7 @@ var gnarly = (function() {
         sunDown = currentTime.diff(sunSetLimit, 'm');
         sunUp = currentTime.diff(sunRiseLimit, 'm');
 
-        // beachCam();
+        beachCam();
     }
 
     /**
