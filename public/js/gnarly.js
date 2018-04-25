@@ -1584,7 +1584,7 @@ var gnarly = (function() {
         sunDown = currentTime.diff(sunSetLimit, 'm');
         sunUp = currentTime.diff(sunRiseLimit, 'm');
 
-        beachCam();
+        // beachCam();
     }
 
     /**
